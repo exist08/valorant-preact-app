@@ -1,0 +1,392 @@
+@import url(https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat:wght@500&family=Open+Sans&family=Outfit&display=swap);
+@font-face {
+  font-family: 'VALORANT';
+  font-style: normal;
+  font-weight: 400;
+  src: local('VALORANT'), url('https://fonts.cdnfonts.com/s/37505/Valorant Font.woff') format('woff');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #FAFAFA;
+  font-weight: 400;
+  color: #444;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'VALORANT', sans-serif;
+}
+#app {
+  height: 100%;
+}
+header {
+  /* background: violet; */
+  background: linear-gradient(125deg,#000000e8 54%,#ff4655 50%);
+  width: 100%;
+  height: 10vh;
+}
+header nav {
+  padding: 0 2rem;
+  width: 100%;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+}
+header nav a{
+  color: #FAFAFA;
+}
+.home {
+  width: 100%;
+  height: 90vh;
+  background: #ff4655;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.home .logo {
+  width: 400px;
+  height: 400px;
+  background-image: url(/e2987ed32a23a30fe3845c007a07135a.svg);
+  background-size: cover;
+  background-color: #ff4655;
+  animation: anim 0.8s linear forwards;
+}
+@media screen and (max-width: 520px) {
+  .home .logo {
+    /* animation: none; */
+    width: 220px;
+    height: 220px;
+  }
+}
+@keyframes anim {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 1;
+  }
+}
+
+/* all agents style */
+section h1{
+  text-align: center;
+  font-size: 3rem;
+  padding: 1rem;
+}
+section section.grid{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 20px;
+  padding: 1rem;
+}
+section.grid article {
+  /* margin: 1em; */
+  width: 160px;
+  height: 160px;
+  background-color: #ff4655;
+  background-size: cover;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  box-shadow: 5px 5px 0 0px rgba(0,0,0,0.2);
+  transition: .5s;
+}
+section.grid article:hover{
+  box-shadow: 10px 10px 0 0px rgba(0,0,0,0.7);
+  -ms-transform: translate(-5px,-5px);
+      transform: translate(-5px,-5px);
+}
+section.grid article h2 {
+  color: black;
+  -webkit-text-stroke: 1px white;
+  text-shadow: 0 0 15px black;
+}
+
+/* Individual Agent */
+main.agent{
+  width: 100%;
+  height: 90vh;
+  background-image: linear-gradient(125deg,#ff4655 40%,#000000e8 30%);
+  display: -ms-flexbox;
+  display: flex;
+}
+main.agent .imgBox{
+  width: 40vw;
+  height: 100%;
+  background-size: cover;
+  background-position: center right;
+  -ms-transform: translateX(-100%);
+      transform: translateX(-100%);
+  animation: anim-move 1s ease-out forwards,anim-shadow 1s linear forwards 1s;
+}
+main.agent .contentBox .small-role{
+  color: white;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+main.agent .contentBox .name{
+  color: white;
+  font-weight: 700;
+  font-size: 4rem;
+  letter-spacing: 1px;
+}
+
+@media screen and (max-width:1080px) {
+  main.agent{
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+  }
+  main.agent .imgBox{
+    width: 50vw;
+    height: 100%;
+    background-size: 130%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+  main.agent .contentBox{
+    /* background: burlywood; */
+    width: 50vw;
+  }
+}
+@media screen and (max-width:780px) {
+  main.agent{
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    position: relative;
+  }
+  main.agent .imgBox{
+    position: absolute;
+    bottom: 0;
+    width: 70vw;
+    height: 100%;
+    background-size: 130%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+  main.agent .contentBox{
+    /* background: rebeccapurple; */
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center;
+    padding-right: 5px;
+    padding-top: 5px;
+  }
+  main.agent .contentBox .contentBox-container{
+    margin-left: auto;
+    /* background: rgb(21, 113, 218); */
+    width: 70%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: end;
+        align-items: flex-end;
+    text-align: center;
+  }
+}
+@media screen and (max-width:580px) {
+  main.agent{
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    position: relative;
+  }
+  main.agent .imgBox{
+    position: absolute;
+    bottom: 0;
+    width: 70vw;
+    height: 100%;
+    background-size: 130%;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+  }
+  main.agent .contentBox{
+    /* background: red; */
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+  }
+  main.agent .contentBox .contentBox-container{
+    margin-left: auto;
+    /* background: rgb(21, 113, 218); */
+    width: 70%;
+  }
+}
+@keyframes anim-move {
+  0%{
+    transform: translateX(-100%);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+@keyframes anim-shadow {
+  50%{
+    filter: drop-shadow(-0px 0px 0 rgba(0,0,0,0.6));
+  }
+  100%{
+    filter: drop-shadow(-15px 15px 0 rgba(0,0,0,0.6));
+  }
+}
+
+
+/* abilities */
+main.agent .contentBox .abilities{
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  width: 400px;
+}
+@media screen and (max-width:580px) {
+  main.agent .contentBox .abilities{
+    width: 350px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+main.agent .contentBox .abilities .abl{
+  width: 70px;
+  height: 100px;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(255,255,255,0.1);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: space-evenly;
+      justify-content: space-evenly;
+  -ms-flex-align: center;
+      align-items: center;
+  color: white;
+  cursor: pointer;
+}
+main.agent .contentBox .abilities .abl .abl-assign{
+  width: 90%;
+  /* border: 1px solid springgreen; */
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  background-color: rgba(255,255,255,0.2);
+  text-align: center;
+  font-size: .7em;
+  font-family: 'Montserrat';
+}
+main.agent .contentBox .abilities .abl .abl-img{
+  width: 90%;
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 65%;
+}
+/* agent description */
+main.agent .contentBox .desx{
+  margin-top: 1em;
+  width: 350px;
+  color: #FAFAFA;
+  font-family: 'Josefin Sans';
+}
+/* role description */
+main.agent .contentBox .role-desx{
+  margin-top: 1em;
+  width: 350px;
+  color: #FAFAFA;
+  font-family: 'Josefin Sans';
+}
+@media screen and (max-width:780px){
+  main.agent .contentBox .abilities .abl{
+    width: 55px;
+    height: 80px;
+    -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+    background-color: rgba(255,255,255,0.1);
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: space-evenly;
+        justify-content: space-evenly;
+    -ms-flex-align: center;
+        align-items: center;
+    color: white;
+    cursor: pointer;
+  }
+  main.agent .contentBox .abilities .abl .abl-assign{
+    width: 90%;
+    font-size: .55em;
+    font-family: 'Montserrat';
+    letter-spacing: 1px;
+  }
+}
+main.agent .contentBox .role-desx span{
+  font-weight: 700;
+  display: block;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width:520px) {
+  main.agent .contentBox .small-role{
+    position: absolute;
+    top: 60%;
+    right: 5%;
+    color: white;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  main.agent .contentBox .name{
+    top: 65%;
+    right: 5%;
+    position: absolute;
+    color: white;
+    font-weight: 700;
+    font-size: 4rem;
+    letter-spacing: 1px;
+    animation: anim-text 1s linear forwards;
+  }
+  main.agent .contentBox .desx,
+  main.agent .contentBox .role-desx{
+    font-size: .85em;
+  }
+}
+@keyframes anim-text {
+  100%{
+    text-shadow: 7px 9px 0  rgba(0,0,0,0.6);
+  }
+}
+
+
+
+/*# sourceMappingURL=ssr-bundle.58ea8.css.map*/
